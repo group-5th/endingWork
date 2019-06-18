@@ -1,0 +1,120 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>注册页</title>
+<link href="css/base.css" rel="stylesheet">
+<link href="css/index.css" rel="stylesheet">
+<link href="css/about_.css" rel="stylesheet">
+</head>
+
+<body>
+<header>
+  <div id="logo"><a href="/"></a></div>
+  <nav class="topnav" id="topnav">
+    <a href="index_.html">
+      <span>首页</span>
+      <span class="en">Protal</span>
+    </a>
+    <a href="about_1.html">
+      <span>注册</span>
+      <span class="en">About</span>
+    </a>
+  </nav>
+</header>
+
+<article>
+  <h2 class="title_tj">
+    <p><span>注册</span></p>
+  </h2>
+  <div class="login">
+    <form action="" method="post">
+      <input type="text" id="username" name="user" placeholder="用户名" required="required">
+      <input type="password" name="password" placeholder="密  码" required="required">
+      <td><em id="message"></em></td>
+      <button type="submit">注册</button>
+      <p><a href="about_.html">返回登录页</a></p>
+    </form>
+  </div>
+</article>
+
+<footer>
+  <p>版权所有@2019<a href="/"></a></p>
+</footer>
+
+<script src="js/silder.js"></script>
+<script language="javascript" type="text/javascript">
+  window.onload=function(){
+    document.getElementById("username").focus();
+  };
+  var xmlhttp;
+  function hadoop() {
+    // 1.创建XMLHttpRequest对象  
+    if (window.XMLHttpRequest) {
+      // IE7,IE8,FireFox,Mozilla,Safari,Opera  
+      xmlhttp = new XMLHttpRequest();
+      if (xmlhttp.overrideMimeType) {
+        xmlhttp.overrideMimeType("text/xml");
+      }
+    } else if (window.ActiveXObject) {
+        // IE6,IE5.5,IE5  
+        var activexName = [ "MSXML2.XMLHTTP", "Miscrosoft.XMLHTTP" ];
+        for ( var i = 0; i < activexName.length; i++) {
+          try {
+            xmlhttp = new ActiveXObject(activexName[i]);
+            break;
+          } catch (e) {
+            }
+        }
+      }
+      if (xmlhttp == undefined || xmlhttp == null) {
+        alert('当前浏览器不支持创建XMLHttpRequest对象');
+        return;
+      }
+    
+       //2.注册回调函数
+        xmlhttp.onreadystatechange = callback;
+       // 注意方法调用后面不加括号
+       //xmlhttp.onreadystatechange = callback();  
+    
+       // 获取文本框中输入的内容，经过两次编码防止中文乱码
+        // 后台使用URLDecoder.decode(username,"utf-8")对username解码 
+        var userName = document.getElementById("username").value;
+        if(userName==""){
+          document.getElementById("message").innerHTML="用户名不能为空";
+          $("#username").focus();
+          return;
+        }
+        userName = encodeURI(encodeURI(userName));
+        // 3.设置和服务器端交互参数  
+        xmlhttp.open("POST", "${pageContext.request.contextPath }/dumplicate.do?username=" + userName, true);
+    
+        // 4.设置向服务器端发送的数据，启动和服务器端的交互  
+        xmlhttp.send(null);
+        }
+    
+        function callback() {
+          // 5 .判断和服务器端的交互是否完成，还要判断服务器端是否正确返回了数据  
+          if (xmlhttp.readyState == 4) {
+            // 表示和服务器端的交互已经完成  
+            if (xmlhttp.status == 200) {
+              // 表示服务器的响应代码是200，正确的返回了数据  
+              // 纯文本数据的接受方法  
+              var message = xmlhttp.responseText;
+              // XML数据对应的DOM对象的接受方法  
+              // 使用的前提是，服务器端需要设置content-type为text/xml  
+              // var domXml = xmlhttp.responseXML;  
+    
+              //向div标签中填充文本内容的方法  
+              var div = document.getElementById("message");
+              if(message=="用户名已被注册"){
+                document.getElementById("username").focus();
+                document.getElementById("username").select();
+              }
+              div.innerHTML = message;
+            }
+          }
+        }
+    </script>
+</body>
+</html>

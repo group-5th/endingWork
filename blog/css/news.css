@@ -1,0 +1,15 @@
+#details{
+	margin-top: 10px;
+	text-align: center;
+	font-size: 15px;
+}
+#contentText p {
+	text-indent: 2em;
+	font-size:15px;
+}
+#contentText span {
+	font-size:17px;
+}
+h2 { 
+	text-align: center;
+}

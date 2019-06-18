@@ -1,0 +1,129 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>管理员操作页</title>
+<link href="css/base.css" rel="stylesheet">
+<link href="css/index.css" rel="stylesheet">
+<link href="css/admin.css" rel="stylesheet">
+</head>
+
+<body>
+<header>
+  <div id="logo"><a href="/"></a></div>
+  <nav class="topnav" id="topnav">
+    <a href="index_.html">
+      <span>首页</span>
+      <span class="en">Protal</span>
+    </a>
+    <!-- <a href="newlist_.html">
+      <span>博文浏览</span>
+      <span class="en">Life</span>
+    </a>
+    <a href="moodlist_.html">
+      <span>博文列表</span>
+      <span class="en">Doing</span>
+    </a> -->
+    <a href="about_.html">
+      <span>退出</span>
+      <span class="en">About</span>
+    </a>
+  </nav>
+</header>
+
+<article>
+  <h2 class="title_tj">
+    <p>欢迎<span>admin</span></p>
+  </h2>
+  <div class="center_first" >
+    <div style="color:red;"><p style="font-size: 20px;margin-top: 10px;margin-bottom: 10px;">管理员等级1</p></div>
+    <div style="font-size: 18px; text-align: ;font-weight: 700px;">
+      <p><span><a href="user_manage.html">管理用户&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp </a></span><span><a href="type_manage.html">管理类型&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp </a></span><span><a href="">我的博客</a></span></p>
+      <p><span><a href="">综合&nbsp&nbsp&nbsp</a></span><span><a href="">历史&nbsp&nbsp&nbsp&nbsp</a></span><span><a href="">&nbsp娱乐&nbsp&nbsp&nbsp</a></span><span><a href="">科技&nbsp&nbsp&nbsp&nbsp</a></span><span><a href="">&nbsp美妆&nbsp&nbsp&nbsp</a></span><span><a href="">美食&nbsp&nbsp&nbsp</a></span></p>
+    </div>
+
+    <div style="font-size: 18px;margin-top: 32px;margin-left: 10%;float:left;"><p><span><a href="admin_add.html">增加博客</a></span></p></div>
+    
+    <div style="margin-top: 30px;">
+      <form name="input" action="" method="post" style="margin-left: 30%">
+        <span style="font-size: 16px;">关键字:</span> <input type="text" style="height: 30px;width: 300px;" name="" />
+        <input type="submit" value="查询" style="height: 35px;width: 50px;background-color: lightblue;font-style: 18px;" />
+      </form>
+    </div>
+
+    <div  style="margin-top:40px;font-size: 18px" >
+      <table width="80%" height="40px" border="0" align="center" cellpadding="3" cellspacing="1" bgcolor="white">
+        <tr bgcolor="lightblue">
+          <td><div align="center"><strong>序号</strong></div></td>
+          <td><div align="center"><strong>标题</strong></div></td>
+          <td><div align="center"><strong>作者</strong></div></td>
+          <td><div align="center"><strong>类型</strong></div></td>
+          <td><div align="center"><strong>发布时间</strong></div></td>
+          <td><div align="center"><strong>完成时间</strong></div></td>
+          <td><div align="center"><strong>删除</strong></div></td>
+          <td><div align="center"><a href="admin_edit.html">编辑</a></div></td>
+        </tr>
+        <tr bgcolor="lightpink">
+          <td><div align="center">1</div></td>
+          <td><div align="center">IT时代</div></td>
+          <td><div align="center">11</div></td>
+          <td><div align="center">科技</div></td>
+          <td><div align="center">2018-06-06</div></td>
+          <td><div align="center">2018-06-04 21:09:05.0</div></td>
+          <td><div align="center"><a href="#">删除</a></div></td>
+          <td><div align="center"><a href="admin_edit.html">编辑</a></div></td>
+        </tr>
+        <tr bgcolor="lightpink">
+          <td><div align="center">2</div></td>
+          <td><div align="center">体面</div></td>
+          <td><div align="center">11</div></td>
+          <td><div align="center">历史</div></td>
+          <td><div align="center">2018-06-06</div></td>
+          <td><div align="center">2018-06-06 08:40:47.0</div></td>
+          <td><div align="center"><a href="#">删除</a></div></td>
+          <td><div align="center"><a href="admin_edit.html">编辑</a></div></td>
+        </tr>
+        <tr bgcolor="lightpink">
+          <td><div align="center">3</div></td>
+          <td><div align="center">远走高飞</div></td>
+          <td><div align="center">小欣欣</div></td>
+          <td><div align="center">娱乐</div></td>
+          <td><div align="center">2018-06-06</div></td>
+          <td><div align="center">2018-06-06 08:40:46.0</div></td>
+          <td><div align="center"><a href="#">删除</a></div></td>
+          <td><div align="center"><a href="admin_edit.html">编辑</a></div></td>
+        </tr>
+        <tr bgcolor="lightpink">
+          <td><div align="center">4</div></td>
+          <td><div align="center">纸短情长</div></td>
+          <td><div align="center">admin</div></td>
+          <td><div align="center">美妆</div></td>
+          <td><div align="center">2018-06-06</div></td>
+          <td><div align="center">2018-06-06 08:38:10.0</div></td>
+          <td><div align="center"><a href="#">删除</a></div></td>
+          <td><div align="center"><a href="admin_edit.html">编辑</a></div></td>
+        </tr>
+      </table>
+      <div class="page">
+        <span>第1页/共1页</span>
+        <a href="">首页</a>
+        <span>上一页</span>
+        <span>下一页</span>
+        <a href="">尾页</a>
+      </div>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <p>版权所有@2018<a href="/"></a></p>
+</footer>
+
+<script src="js/silder.js"></script>
+<script src="js/jquery.js"></script>
+<script>
+  
+</script>
+</script>
+</body>
+</html>
